@@ -1,0 +1,148 @@
+body{
+  overflow-x: hidden;
+}
+
+#home .row{
+  height: 90vh;
+}
+
+#home .row .col:nth-child(1){
+  margin-left: 10rem;
+}
+
+#home .row .col:nth-child(2){
+  margin-right: 3rem;
+}
+
+#home h1{
+  font-size: 72px;
+  font-weight: 700;
+}
+
+#home p{
+  font-size: 36px;
+}
+
+#about .about-header{
+  margin-bottom: 5rem;
+}
+
+#about .about-header h1{
+  font-weight: 600;
+  font-size: 54px;
+}
+
+#about .about-header hr{
+  width: 10%;
+  border: 3px solid black;
+  margin: 1rem auto 0 auto;
+  border-radius: 3px;
+}
+
+#about .row img{
+  width: 600px;
+  height: 600px;
+}
+
+#about .content-list h2{
+  font-weight: 500;
+  font-size: 48px;
+}
+
+#about .content-list p{
+  font-size: 24px;
+}
+
+#features{
+  margin-bottom: 5rem;
+}
+
+#features .feature-header h2{
+  font-size: 54px;
+  font-weight: 600;
+}
+
+
+#features .feature-header hr{
+  width: 10%;
+  border: 3px solid black;
+  margin: 1rem auto 0 auto;
+  border-radius: 3px;
+}
+
+#features .feature-img img{
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  background-color: black;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}
+
+#calculator{
+  margin-top: 10rem;
+}
+
+#calculator .calculator-header{
+  padding-right: 1rem;
+}
+
+#calculator .calculator-header h2{
+  font-size: 54px;
+  font-weight: 600;
+}
+
+#calculator .calculator-header p{
+  font-size: 28px;
+}
+
+#feedback{
+  margin-top: 5rem;
+  height: 50vh;
+  padding-top: 10vh;
+}
+
+#header-menu .row{
+  height: 75vh;
+}
+
+#header-menu .image-header img{
+  height: 400px;
+}
+
+#food-list .card-item{
+  margin-top: 1.5rem;
+}
+
+#food-list .card .card-category{
+  height: 40px;
+  width: 100px;
+  position: absolute;
+  background-color: red;
+  align-items: center;
+  padding: 5px;
+  text-align: center;
+  top: 15px;
+  left: 20px;
+}
+
+.article-header .container-fluid{
+  margin: 4rem 0;
+}
+
+.article-header .row .head-left{
+  padding-left: 4rem;
+}
+
+.article-list .container-fluid{
+  margin: 4rem 0;
+}
+
+.article-header .newest-card .newest-article-date{
+  margin-top: -10px;
+}
+
+.article-list .article-card img{
+  height: 250px;
+  width: 100%;
+}
