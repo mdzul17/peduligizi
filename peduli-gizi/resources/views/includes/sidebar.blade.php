@@ -16,9 +16,9 @@
             <span>Dashboard</span></a>
     </li>
     <li class="nav-item active">
-        <a class="nav-link" href="{{route('galeri-artikel.index')}}">
+        <a class="nav-link" href="{{route('artikel.index')}}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Galeri Artikel</span></a>
+            <span>Artikel</span></a>
     </li>
     <li class="nav-item active">
         <a class="nav-link" href="{{route('menu.index')}}">

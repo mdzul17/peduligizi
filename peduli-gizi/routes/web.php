@@ -29,3 +29,7 @@ Route::prefix('admin')
         Route::resource('galeri-menu', 'GaleriMenuController');
 });
 Auth::routes();
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
