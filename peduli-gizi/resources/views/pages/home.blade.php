@@ -14,7 +14,7 @@
           <h1>PeduliGizi</h1>
           <p>Karena sehat adalah hak tubuh kita semua.</p>
           <div class="btn-more">
-            <a href="#about" class="btn btn-primary">Pelajari lebih lanjut</a>
+            <a href="#about" class="btn">Pelajari lebih lanjut</a>
           </div>
         </div>
         <div class="col">
@@ -43,39 +43,47 @@
             <h2>
               Memperbaiki gizi dan meningkatkan kesehatan seluruh penduduk
             </h2>
-            <p class="mt-4">
+            <p class="mt-4" style="color:black">
               Berlatar dari SDGs Indonesia 2030, kami ikut berkontribusi dalam hal-hal berikut:
             </p>
           </div>
-          <div class="row justify-content-evenly mt-2">
-            <div class="col-4 p-3 border border-3 border-dark">
+          <div class="row justify-content-evenly mt-2 mb-3">
+            <div class="col-4 p-3 card-about">
               <div class="content-info text-center" style="width: 100%; height: 150px;">
-                <p>
+                <img src="{{url('frontend/images/one.png')}}" alt="" style="width: 50px; height: 50px">
+                <br><br>
+                <h4>
                   Memperbaiki gizi melalui pola makan dan menu yang baik
-                </p>
+                </h4>
               </div>
             </div>
-            <div  class="col-4 p-3 border border-3 border-dark">
+            <div class="col-4 p-3 card-about">
               <div class="content-info text-center " style="width: 100%; height: 100%;">
-                <p>
+                <img src="{{url('frontend/images/2.png')}}" alt="" style="width: 50px; height: 50px">
+                <br><br>
+                <h4>
                   Mengurangi penyakit yang mungkin terjadi dengan menjaga pola hidup sehat
-                </p>
+                </h4>
               </div>
             </div>
-          </div>
-          <div class="row mt-3 justify-content-evenly">
-            <div class="col-4 p-3 border border-3 border-dark">
+            <div class="w-100"></div>
+            <div class="w-100"></div>
+            <div class="col-4 p-3 card-about" style="height: 250px;">
               <div class="content-info text-center" style="width: 100%; height: 150px">
-                <p>
+                <img src="{{url('frontend/images/3.png')}}" alt="" style="width: 50px; height: 50px">
+                <br><br>
+                <h4>
                   Membantu menghitung kebutuhan gizi melalui kalkulator gizi
-                </p>
+                </h4>
               </div>
             </div>
-            <div  class="col-4 p-3 border border-3 border-dark">
+            <div class="col-4 p-3 card-about" style="height: 250px;">
               <div class="content-info text-center " style="width: 100%; height: 150px;">
-                <p>
+                <img src="{{url('frontend/images/four.png')}}" alt="" style="width: 50px; height: 50px">
+                <br><br>
+                <h4>
                   Menyajikan menu olahraga dan makanan yang baik bagi tubuh
-                </p>
+                </h4>
               </div>
             </div>
           </div>
@@ -97,21 +105,27 @@
       <div class="row justify-content-center mt-5">
         <div class="col-4 text-center">
           <div class="feature-img">
-            <img src="" alt="">
+            <img src="{{ url('frontend/images/calc.jpg')}}" alt="">
           </div>
-          <h3>Kalkulator Gizi</h3>
+          <a href="#" class="nav-link link-dark">
+            <h3>Kalkulator Gizi</h3>
+          </a>
         </div>
         <div class="col-4 text-center">
           <div class="feature-img">
-            <img src="" alt="">
+            <img src="{{ url('frontend/images/news paper.png')}}" alt="">
           </div>
-          <h3>Artikel Kesehatan</h3>
+          <a href="{{route('article')}}" class="nav-link link-dark">
+            <h3>Artikel Kesehatan</h3>
+          </a>
         </div>
         <div class="col-4 text-center">
           <div class="feature-img">
-            <img src="" alt="">
+            <img src="{{ url('frontend/images/food.png')}}" alt="">
           </div>
-          <h3>Rekomendasi Menu Makanan</h3>
+          <a href="{{route('rekomendasi')}}" class="nav-link link-dark">
+            <h3>Rekomendasi Menu Makanan</h3>
+          </a>
         </div>
       </div>
     </div>
@@ -126,27 +140,36 @@
   <section id="calculator">
     <div class="container mt-5">
       <div class="row justify-content-center ">
-        <div class="col-6 align-self-center calculator-header">
-          <h2>Kalkulator Gizi</h2>
-          <p>Coba hitung ketentuan berikut untuk mendapatkan rekomendasi untukmu</p>
+        <div class="col-8 align-self-center calculator-header">
+          <div class="img-background" style="z-index:-1; position: absolute; margin-top: -150px; margin-left: -275px">
+            <img src="{{url('frontend/images/calculator.png')}}" alt="" style="width: 600px">
+          </div>
+          <div class="calc-content" style="z-index: 1; margin-left: 275px">
+            <h2>Kalkulator Gizi</h2>
+            <p class="text-dark">Coba hitung ketentuan berikut untuk mendapatkan rekomendasi untukmu</p>
+          </div>
         </div>
-        <div class="col-6">
-          <form>
+        <div class="col-4">
+          <form action="hitung" method="POST">
+            @csrf
             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Lorem, ipsum dolor.</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <label for="usia" class="form-label">Masukkan usiamu</label>
+              <input type="number" class="form-control" id="usia" name="usia">
             </div>
             <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">Lorem, ipsum.</label>
-              <input type="password" class="form-control" id="exampleInputPassword1">
+              <label for="tbadan" class="form-label">Masukkan tinggi badanmu</label>
+              <input type="number" class="form-control" id="tbadan" name="tbadan">
             </div>
             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Lorem, ipsum.</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <label for="bbadan" class="form-label">Masukkan berat badanmu</label>
+              <input type="number" class="form-control" id="bbadan" name="bbadan">
             </div>
             <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">Lorem, ipsum dolor.</label>
-              <input type="password" class="form-control" id="exampleInputPassword1">
+              <p>Masukkan jenis kelamin</p>
+              <input type="radio" class="form-check-input" id="laki2" name="jkelamin" value="laki-laki">
+              <label for="laki2" class="form-label">Laki-laki</label>
+              <input type="radio" class="form-check-input" id="perempuan" name="jkelamin" value="perempuan">
+              <label for="perempuan" class="form-label">Perempuan</label>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
@@ -161,7 +184,7 @@
     <div class="container">
       <div class="row text-center">
         <h2>Beri Kami Masukan!</h2>
-        <p>
+        <p class="text-dark">
           Pernah menggunakan fitur kami? Tolong beri kami kesan dan masukan untuk perbaikan ke depannya!
         </p>
       </div>

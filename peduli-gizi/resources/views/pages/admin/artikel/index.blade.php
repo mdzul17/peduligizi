@@ -21,7 +21,6 @@
                             <th>No</th>
                             <th>Judul</th>
                             <th>Gambar</th>
-                            <th>Konten</th>
                             <th>Tanggal</th>
                             <th>Aksi</th>
                         </tr>
@@ -34,7 +33,6 @@
                                 <td>
                                     <img src="{{Storage::url($item->gambar)}}" alt="" style="width:150px;" class="img-thumbnail">
                                 </td>
-                                <td>{{$item->konten}}</td>
                                 <td>{{$item->tanggal}}</td>
                                 <td>
                                     <a href="{{route('artikel.edit', $item->id)}}" class="btn btn-info">

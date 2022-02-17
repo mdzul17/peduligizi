@@ -9,17 +9,17 @@
         <section id="header-menu">
             <div class="container-fluid">
                 <div class="row row-cols-1 row-cols-md-2 justify-content-evenly align-items-center">
-                    <div class="col col-md-6">
+                    <div class="col col-md-5">
                         <div class="head-header">
-                            <h1>Lorem, ipsum dolor.</h1>
+                            <h1 style="font-weight: 700;">Ayo Makan Sehat!</h1>
                         </div>
                         <div class="content-header">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem pariatur necessitatibus unde tempore ad maiores quibusdam sequi, harum excepturi soluta.</p>
+                            <p class="text-dark" style="font-size: 24px">Cek kumpulan resep makanan sehat di sini dan sesuaikan dengan kalori yang kamu butuhkan!</p>
                         </div>
                     </div>
-                    <div class="col col-md-4">
+                    <div class="col col-md-5">
                         <div class="image-header">
-                            <img src="" alt="abc" srcset="">
+                            <img src="{{url('frontend/images/cooking.jpg')}}" alt="abc" srcset="">
                         </div>
                     </div>
                 </div>
@@ -41,112 +41,22 @@
                     </div>
                 </div>
                 <hr>
-                <div class="row row-cols-4 justify-content-between">
-                    <div class="col card-item">
-                        <div class="card" style="width: 18rem;">
+                <div class="row row-cols-4 justify-content-center">
+                    @foreach ($items as $item)
+                      <div class="col card-item">
+                        <div class="card h-100" style="width: 18rem;">
                             <div class="card-category">
-                              <p>Daging</p>
+                              <p class="text-white">{{$item->kategori}}</p>
                             </div>
-                            <img src="{{url('frontend/images/5912.jpg')}}" class="card-img-top" alt="...">
+                            <img src="{{Storage::url($item->gambar)}}" class="card-img-top" alt="...">
                             <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                              <a href="#" class="btn btn-primary">Go somewhere</a>
+                              <h5 class="card-title">{{$item->nm_makanan}}</h5>
+                              <p class="card-text text-dark">{{$item->kalori}} Kalori</p>
+                              <a href="{{route('detail_rekomendasi', $item->id)}}" class="btn border">Cek resepnya</a>
                             </div>
                           </div>
-                    </div>
-                    <div class="col card-item">
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-category">
-                              <p>Daging</p>
-                            </div>
-                            <img src="{{url('frontend/images/5912.jpg')}}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                              <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                          </div>
-                    </div>
-                    <div class="col card-item">
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-category">
-                              <p>Daging</p>
-                            </div>
-                            <img src="{{url('frontend/images/5912.jpg')}}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                              <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                          </div>
-                    </div>
-                    <div class="col card-item">
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-category">
-                              <p>Daging</p>
-                            </div>
-                            <img src="{{url('frontend/images/5912.jpg')}}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                              <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                          </div>
-                    </div>
-                    <div class="col card-item">
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-category">
-                              <p>Daging</p>
-                            </div>
-                            <img src="{{url('frontend/images/5912.jpg')}}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                              <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                          </div>
-                    </div>
-                    <div class="col card-item">
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-category">
-                              <p>Daging</p>
-                            </div>
-                            <img src="{{url('frontend/images/5912.jpg')}}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                              <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                          </div>
-                    </div>
-                    <div class="col card-item">
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-category">
-                              <p>Daging</p>
-                            </div>
-                            <img src="{{url('frontend/images/5912.jpg')}}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                              <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                          </div>
-                    </div>
-                    <div class="col card-item">
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-category">
-                              <p>Daging</p>
-                            </div>
-                            <img src="{{url('frontend/images/5912.jpg')}}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                              <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                          </div>
-                    </div>
-                    
+                      </div>
+                    @endforeach
                 </div>
             </div>
         </section>

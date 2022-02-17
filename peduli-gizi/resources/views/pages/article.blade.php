@@ -17,51 +17,26 @@
                         <h2>Artikel Terbaru</h2>
                     </div>
                     <div class="newest-content">
-                        <div class="newest-card">
-                            <div class="row align-items-center">
-                                <div class="col-auto">
-                                    <img src="{{url('frontend/images/sdg.png')}}" alt="" style="height: 50px; width: 50px; background-color: grey; border-radius: 50%;">
-                                </div>
-                                <div class="col">
-                                    <div class="newest-article-header">
-                                        <h3>Lorem, ipsum dolor.</h3>
+                        @foreach ($items as $item)
+                            <div class="newest-card">
+                                <div class="row align-items-center">
+                                    <div class="col-auto">
+                                        <img src="{{Storage::url($item->gambar)}}" alt="" style="height: 50px; width: 50px; background-color: grey; border-radius: 50%;">
                                     </div>
-                                    <div class="newest-article-date">
-                                        <p>January 1st</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="newest-card">
-                            <div class="row align-items-center">
-                                <div class="col-auto">
-                                    <img src="{{url('frontend/images/sdg.png')}}" alt="" style="height: 50px; width: 50px; background-color: grey; border-radius: 50%;">
-                                </div>
-                                <div class="col">
-                                    <div class="newest-article-header">
-                                        <h3>Lorem, ipsum dolor.</h3>
-                                    </div>
-                                    <div class="newest-article-date">
-                                        <p>January 1st</p>
+                                    <div class="col">
+                                        <div class="newest-article-header">
+                                            <a href="{{route('detail_article', $item->id)}}" class="link-dark text-decoration-none"><h3>{{$item->judul}}</h3></a>
+                                        </div>
+                                        <div class="newest-article-date">
+                                            <p>{{$item->tanggal}}</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="newest-card">
-                            <div class="row align-items-center">
-                                <div class="col-auto">
-                                    <img src="{{url('frontend/images/sdg.png')}}" alt="" style="height: 50px; width: 50px; background-color: grey; border-radius: 50%;">
-                                </div>
-                                <div class="col">
-                                    <div class="newest-article-header">
-                                        <h3>Lorem, ipsum dolor.</h3>
-                                    </div>
-                                    <div class="newest-article-date">
-                                        <p>January 1st</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                            @if($loop->count < 3)
+                                @break
+                            @endif
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -70,81 +45,21 @@
       <!-- end article header -->
       <hr>
       <!-- article list -->
-    <section class="article-list">k
+    <section class="article-list">
         <div class="container-fluid">
-            <div class="row row-cols-4 justify-content-center gap-4">
-                <div class="card article-card" style="width: 18rem;">
-                    <img src="{{url('frontend/images/5912.jpg')}}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div class="row row-cols-4 justify-content-center">
+                @foreach ($items as $item)
+                <div class="col">
+                    <div class="card article-card h-100" style="width: 18rem;">
+                        <img src="{{Storage::url($item->gambar)}}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{$item->judul}}</h5>
+                            <p class="card-text">{{$item->tanggal}}</p>
+                            <a href="{{route('detail_article', $item->id)}}" class="btn btn-primary">Baca selengkapnya</a>
+                        </div>
                     </div>
                 </div>
-                <div class="card article-card" style="width: 18rem;">
-                    <img src="{{url('frontend/images/5912.jpg')}}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-                <div class="card article-card" style="width: 18rem;">
-                    <img src="{{url('frontend/images/5912.jpg')}}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-                <div class="card article-card" style="width: 18rem;">
-                    <img src="{{url('frontend/images/5912.jpg')}}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-                <div class="card article-card" style="width: 18rem;">
-                    <img src="{{url('frontend/images/5912.jpg')}}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-                <div class="card article-card" style="width: 18rem;">
-                    <img src="{{url('frontend/images/5912.jpg')}}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-                <div class="card article-card" style="width: 18rem;">
-                    <img src="{{url('frontend/images/5912.jpg')}}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-                <div class="card article-card" style="width: 18rem;">
-                    <img src="{{url('frontend/images/5912.jpg')}}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-                <div class="card article-card" style="width: 18rem;">
-                    <img src="{{url('frontend/images/5912.jpg')}}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
+                @endforeach
                 
             </div>
         </div>

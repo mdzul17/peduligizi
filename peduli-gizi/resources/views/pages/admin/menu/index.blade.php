@@ -21,8 +21,8 @@
                             <th>No</th>
                             <th>Kategori</th>
                             <th>Nama Makanan</th>
+                            <th>Kalori</th>
                             <th>Gambar/Thumbnail</th>
-                            <th>Konten</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -32,10 +32,10 @@
                                 <td>{{$item->id}}</td>
                                 <td>{{$item->kategori}}</td>
                                 <td>{{$item->nm_makanan}}</td>
+                                <td>{{$item->kalori}}</td>
                                 <td>
                                     <img src="{{Storage::url($item->gambar)}}" alt="" style="width:150px;" class="img-thumbnail">
                                 </td>
-                                <td>{{$item->konten}}</td>
                                 <td>
                                     <a href="{{route('menu.edit', $item->id)}}" class="btn btn-info">
                                         <i class="fa fa-pencil-alt"></i>

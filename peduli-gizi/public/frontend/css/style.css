@@ -2,6 +2,31 @@ body{
   overflow-x: hidden;
 }
 
+h1,h2{
+  color: #FC4F4F;
+}
+
+p{
+  color: black;
+}
+
+nav .navbar-nav .nav-item .nav-link{
+  color: #FC4F4F;
+  font-size: 20px;
+}
+
+nav .navbar-nav .nav-item .nav-link:hover{
+  transform: scale(1.1);
+  transition: 0.75s;
+  color: #fa2929;
+}
+
+
+nav .navbar-nav .nav-item .nav-link.active{
+  color: #FC4F4F;
+  font-weight: 700;
+}
+
 #home .row{
   height: 90vh;
 }
@@ -23,6 +48,20 @@ body{
   font-size: 36px;
 }
 
+#home .btn-more a{
+  background-color: #FC4F4F;
+  border-color: #FC4F4F;
+  color: #ffff;
+  font-size: 18px;
+}
+
+#home .btn-more a:hover{
+  background-color: #ffff;
+  color: #FC4F4F;
+  border-color: #FC4F4F;
+  transition: 0.5s;
+}
+
 #about .about-header{
   margin-bottom: 5rem;
 }
@@ -34,7 +73,7 @@ body{
 
 #about .about-header hr{
   width: 10%;
-  border: 3px solid black;
+  border: 3px solid #F76E11;
   margin: 1rem auto 0 auto;
   border-radius: 3px;
 }
@@ -53,6 +92,18 @@ body{
   font-size: 24px;
 }
 
+
+#about .card-about:nth-child(1):hover,
+#about .card-about:nth-child(6):hover{
+  background-color: #FFBC80;
+  transition:0.5s;
+}
+#about .card-about:nth-child(2):hover,
+#about .card-about:nth-child(5):hover{
+  background-color: #FFCCD2;
+  transition:0.5s;
+}
+
 #features{
   margin-bottom: 5rem;
 }
@@ -65,18 +116,21 @@ body{
 
 #features .feature-header hr{
   width: 10%;
-  border: 3px solid black;
+  border: 3px solid #F76E11;
   margin: 1rem auto 0 auto;
   border-radius: 3px;
 }
 
 #features .feature-img img{
-  width: 75px;
-  height: 75px;
-  border-radius: 50%;
-  background-color: black;
+  width: 150px;
+  height: 150px;
   margin-top: 4rem;
   margin-bottom: 2rem;
+}
+
+#features .nav-link:hover{
+  color: #FC4F4F;
+  transition: 0.5s;
 }
 
 #calculator{
@@ -110,21 +164,85 @@ body{
   height: 400px;
 }
 
+#header-menu ul li{
+  font-size: 18px;
+}
+
+#food-list .list-filter .nav-link{
+  color: #FC4F4F;
+}
+
+#food-list .list-filter .active{
+  background-color: #FC4F4F;
+  color: #ffff;
+}
+
+
 #food-list .card-item{
   margin-top: 1.5rem;
+}
+
+#food-list .card-item .card:hover{
+  box-shadow: 10px 10px 5px lightblue;
+  transition: 0.75s;
 }
 
 #food-list .card .card-category{
   height: 40px;
   width: 100px;
   position: absolute;
-  background-color: red;
+  background-color: #FC4F4F;
   align-items: center;
   padding: 5px;
   text-align: center;
   top: 15px;
   left: 20px;
 }
+
+#food-list .card-body a{
+  background-color: #FC4F4F;
+  color: #ffff;
+  border-color: #FC4F4F;
+}
+
+#food-list .card-body a:hover{
+  background-color: #ffff;
+  color: #FC4F4F;
+  border: 3px;
+  transition: 0.5s;
+}
+
+.article-list .card-body a{
+  background-color: #FC4F4F;
+  color: #ffff;
+  border-color: #FC4F4F;
+}
+
+.article-list .card-body a:hover{
+  background-color: #ffff;
+  color: #FC4F4F;
+  border: 3px;
+  transition: 0.5s;
+}
+
+.article-list .card:hover{
+  box-shadow: 10px 10px 5px lightblue;
+  transition: 0.75s;
+}
+
+
+#food-content{
+  font-size: 18px;
+}
+
+.navigation-pane{
+  font-size: 20px;
+}
+
+.navigation-pane a{
+  color: #FC4F4F;
+}
+
 
 .article-header .container-fluid{
   margin: 4rem 0;

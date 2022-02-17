@@ -87,7 +87,7 @@ class MenuController extends Controller
     public function update(Request $request, $id)
     {
         $data = $request->all();
-        $data['image'] = $request->file('image')->store(
+        $data['gambar'] = $request->file('gambar')->store(
             'assets/galerimenu', 'public'
         );
 

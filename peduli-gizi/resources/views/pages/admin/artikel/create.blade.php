@@ -33,7 +33,7 @@
                 </div>
                 <div class="form-group">
                     <label for="konten">Konten</label>
-                    <textarea name="konten" id="konten" rows="10" class="d-block w-100 form-control">{{old('konten')}}</textarea>
+                    <textarea name="konten" id="konten" class="form-control">{{old('konten')}}</textarea>
                 </div>
                 <div class="form-group">
                     <label for="tanggal">Tanggal</label>

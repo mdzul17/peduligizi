@@ -11,7 +11,7 @@ class Menu extends Model
     use SoftDeletes;
 
     protected $fillable = [
-        'kategori', 'nm_makanan', 'gambar', 'konten'
+        'kategori', 'kalori','nm_makanan', 'bahan', 'gambar', 'konten'
     ];
 
     protected $hidden = [
